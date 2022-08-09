@@ -82,7 +82,6 @@ document.getElementById('refresh').style.display = 'none';
 		'size' : 'invisible',
 		'callback':function(recaptchaToken){
 				console.log("Captacha token is : " + recaptchaToken);
-				alert("Captacha token is : " + recaptchaToken);
 				document.getElementById('refresh').style.display = 'block';
 				document.getElementById('sender').style.display = 'none';
 				Captcha.postMessage(recaptchaToken);
