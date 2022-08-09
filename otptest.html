@@ -52,9 +52,9 @@
 			<div id="recaptcha-container"></div>
 			<input type="button" id="send" value="I'm not a robot">
 		</div>
-		<div id="refresh">
+<!-- 		<div id="refresh">
 			<input type="button" id="retry" value="Retry" onclick="reload()">
-		</div>
+		</div> -->
 		<div id="verifier" style="display: none">
 			<input type="text" id="verificationcode" placeholder="OTP Code">
 			<input type="button" id="verify" value="Verify" onClick="codeverify()">
@@ -75,14 +75,14 @@ const firebaseConfig = {
 // 	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 // 	recaptchaVerifier.render();
 // }
-document.getElementById('refresh').style.display = 'none';
-				document.getElementById('sender').style.display = 'block';
+// document.getElementById('refresh').style.display = 'none';
+// 				document.getElementById('sender').style.display = 'block';
 
 	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('send',{
 		'size' : 'invisible',
 		'callback':function(recaptchaToken){
 				console.log("Captacha token is : " + recaptchaToken);
-				document.getElementById('refresh').style.display = 'block';
+// 				document.getElementById('refresh').style.display = 'block';
 				document.getElementById('sender').style.display = 'none';
 				Captcha.postMessage(recaptchaToken);
 		}
